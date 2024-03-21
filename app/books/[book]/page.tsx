@@ -1,18 +1,36 @@
-//specific book page
-
+//specific book page - a dynamic route for each book
 import { BOOK_QUERY } from "@/app/page";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { SanityDocument } from "sanity";
 
+
 //declaring types for typescript
-type Props = {
-    params: {book: string}
-}
+ type Props = {
+     params: {book: string}
+ }
+
+ type Book = {
+    _id: string;
+    _createdAt: Date;
+    name: string;
+    slug: string;
+    image: string;
+    url: string;
+    author: string;
+ }
+
+
 
 export default async function Book({params}: Props) {
     const slug = params.book;
-    const book = await client.fetch<SanityDocument[]>(BOOK_QUERY, {slug});
+    const book: any = await client.fetch<SanityDocument[]>(BOOK_QUERY, {slug});
+   
+
+    if (!book) {
+        // Handling the case where no book is found
+        return <div className="grid items-center"><h1 className="font-extrabold text-5xl">Book Not found</h1></div>;
+    }
 
     return (
         <div className="w-dvw h-dvh">

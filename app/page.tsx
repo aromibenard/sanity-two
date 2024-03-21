@@ -1,3 +1,5 @@
+//home page
+import Therapy from "@/components/therapy";
 import { client } from "@/sanity/lib/client";
 import { SanityDocument } from "next-sanity";
 import Image from "next/image";
@@ -31,7 +33,11 @@ export default async function Home() {
   
   return (
     <div className="h-screen mx-10">
-       <div className="flex my-2">
+
+      {/* therapy section */}
+      <Therapy/>
+
+       <div className="flex my-4">
           <h1 className="mx-auto font-bold text-4xl bg-gradient-to-r from-blue-200 to-blue-600 bg-clip-text text-transparent">Explore Our Book Catalogue</h1>
        </div>
        <div className="mt-5 p-5 grid grid-cols-1 md:grid-cols-4 gap-4">

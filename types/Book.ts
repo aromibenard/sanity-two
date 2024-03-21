@@ -1,4 +1,4 @@
-export type Project = {
+export type book = {
     _id: string;
     _createdAt: Date;
     name: string;
