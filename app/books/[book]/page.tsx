@@ -1,5 +1,5 @@
 //specific book page - a dynamic route for each book
-import { BOOK_QUERY } from "@/app/page";
+import { BOOK_QUERY } from "@/app/queries/queries";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { SanityDocument } from "sanity";
