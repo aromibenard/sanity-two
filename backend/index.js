@@ -18,7 +18,7 @@ app.post("/authenticate", async (req, res) => {
             first_name: username 
          },
          {
-            headers: {"Private-Key": "7b4505f6-605b-4faf-bc91-1e8ca76d6294"}
+            headers: {"Private-Key": "6e9fb3b3-6f27-47d5-b326-8e165833bf44"}
          }
     )
     return res.status(r.status).json(r.data)
