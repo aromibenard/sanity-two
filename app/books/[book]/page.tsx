@@ -1,8 +1,22 @@
+
+
 //specific book page - a dynamic route for each book
 import { BOOK_QUERY } from "@/app/queries/queries";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { SanityDocument } from "sanity";
+import {
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+  } from "@/components/ui/drawer"
+import { Button } from "@/components/ui/button";
+  
 
 
 //declaring types for typescript
@@ -54,7 +68,27 @@ export default async function Book({params}: Props) {
                 {/* book author & read link */}
                 <div className="flex justify-around md:m-3">
                      <h3 className="font-semibold text-2xl">A Book by {book.author}</h3>
-                    <button className="text-gray-800 bg-slate-400  p-1 md:p-3 w-[6rem] rounded-md shadow-lg hover:scale-105 hover:text-white hover:bg-blue-400 transition">Read</button>
+                    <Drawer>
+                        <DrawerTrigger><button 
+                            className="text-gray-800 bg-slate-400  p-1 md:p-3 w-[6rem] rounded-md shadow-lg hover:scale-105 hover:text-white hover:bg-blue-400 transition">
+                                Read
+                        </button>
+                        </DrawerTrigger>
+                        <DrawerContent className="h-[23rem]">
+                            <DrawerHeader>
+                                <DrawerTitle>{book.name}</DrawerTitle>
+                                <DrawerDescription>A book by {book.author}</DrawerDescription>
+                            </DrawerHeader>
+                            <div className="p-3">
+                                {book.content}
+                            </div>
+                            <DrawerFooter>
+                                <DrawerClose>
+                                    <Button variant="outline">Close</Button>
+                                </DrawerClose>
+                            </DrawerFooter>
+                        </DrawerContent>
+                    </Drawer>
                 </div>
             </div>
         </div>

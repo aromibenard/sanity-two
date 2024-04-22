@@ -34,6 +34,11 @@ export const  bookSchema = {
             title: 'Description',
             type: 'string'
         },
+        {
+            name: 'content',
+            title: 'Content',
+            type: 'string'
+        },
 
         {
             name: 'image',

@@ -7,6 +7,7 @@ export const BOOKS_QUERY = `*[_type == "book"]{
     "slug": slug.current,
     "image": image.asset->url, 
     url,
+    content
 }`;
   
   //query a specific book
@@ -18,4 +19,5 @@ export const BOOK_QUERY = `*[_type == "book" && slug.current == $slug][0]{
     "slug": slug.current,
     "image": image.asset->url, 
     url,
+    content
   }`

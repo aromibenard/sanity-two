@@ -1,94 +1,76 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
-body {
-    /* background-image: url('./assets/valley.jpeg'); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    margin: 0px;
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
   }
-  
-  .background {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(75deg, rgb(20, 23, 33) 0%, rgb(20, 23, 33) 50%, rgba(20, 23, 33,0.8) 100%);
-    /* Vertical center */
-    display: table-cell;
-    vertical-align: middle;
-  }
-  
-  .form-card {
-    width: 50%;
-    max-width: 350px;
-    padding: 0% 25% 0% 25%;
-  }
-  
-  .form-title { 
-    font-size: 42px; 
-    font-family: 'Avenir'; 
-    font-weight: 800; 
-    letter-spacing: 0.5px; 
-    color: #e8e8e8; 
-    padding-bottom: 12px; 
-  }
-  
-  .form-subtitle {
-    font-size: 18px;
-    font-family: 'Avenir';
-    letter-spacing: 0.5px;
-    color: #afafaf;
-    padding-bottom: 24px;
-  }
-  
-  .auth {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    padding-bottom: 12px;
-  }
-  .auth-label {
-    position: absolute;
-    top: 8px;
-    left: 18px;
-    font-size: 11px;
-    color: rgb(175, 175, 175);
-    font-family: Avenir;
-    width: 100px;
-  }
-  .auth-input {
-    background-color: #3e404b;
-    color: white;
-    font-family: "Avenir";
-    outline: none;
-    border: none;
-    border-radius: 8px;
-    padding: 24px 18px 12px 18px;
-    width: calc(100% - 18px - 18px);
-    margin-bottom: 12px;
-  }
-  .auth-button {
-    width: 100%;
-    height: 53px;
-    color: white;
-    background-color: #fa541c;
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    font-family: "Avenir";
-    cursor: pointer;
-    transition: all .44s ease;
-    -webkit-transition: all .44s ease;
-    -moz-transition: all .44s ease;
-  }
-  .auth-button:hover { filter: brightness(145%); }
-  
-  .chat-wrapper {
-    height: 80vh; 
-    width: 80%;
-    margin-left: 10%; 
-    color: white; 
-    background: rgb(43, 47, 60);
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
   }
